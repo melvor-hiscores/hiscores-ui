@@ -12,6 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class StatsTableComponent implements OnInit {
 
+  displayedColumns: string[] = []
   dataSource: Rank[] = []
 
   rankService: RankService;
@@ -19,6 +20,7 @@ export class StatsTableComponent implements OnInit {
   constructor(rankService: RankService) { this.rankService = rankService; }
 
   ngOnInit() {
+    this.displayedColumns = ['rank', 'name', 'level', 'xp']
     this.dataSource = this.rankService.getRanksForSkill('woodcutting')
   }
 
