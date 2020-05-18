@@ -1,4 +1,6 @@
-export class Rank {
+import { Irank } from './Irank';
+
+export class Rank implements Irank{
     rank: string;
     name: string;
     level: string;
@@ -11,6 +13,10 @@ export class Rank {
         this.level = level;
         this.xp = xp;
         this.updt_dt_tm = updt_dt_tm;
+    }
+
+    public toString() {
+        return JSON.stringify(this);
     }
 
 }

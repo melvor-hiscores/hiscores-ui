@@ -1,7 +1,28 @@
-<app-header></app-header>
+<body>
+    <!-- Horizontal Padding based on the background -->
+    <div class="background-wrapper" fxLayout="row" fxFlexFill fxLayoutAlign="space-between stretch">
+        <div fxFlex="28%">
+            <!-- Padding -->
+        </div>
+        <div fxFlex="44%">
+            <div fxLayout="column" fxFlexFill fxLayoutAlign="space-between stretch">
+                <div fxFlex="10%">
+                    <app-header></app-header>
+                </div>
 
-<app-home></app-home>
+                <div fxFlex="83%">
+                    <app-home></app-home>
+                </div>
 
-<app-footer></app-footer>
+                <div fxFlex="7%">
+                    <app-footer></app-footer>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="28%">
+            <!-- Padding -->
+        </div>
+    </div>
+</body>
 
 <router-outlet></router-outlet>

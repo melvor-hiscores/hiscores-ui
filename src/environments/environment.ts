@@ -6,7 +6,6 @@ export const environment = {
   production: false
 };
 
-
 export const API_URL = "https://l9ahyalvt7.execute-api.us-east-1.amazonaws.com/prod"
 
 export const TOTAL_INDEX = 0;

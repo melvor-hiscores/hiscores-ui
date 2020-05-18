@@ -1,3 +1,7 @@
-body {
-    background-image: url('https://www.runescape.com/img/rsp777/bg2.jpg')
+.background-wrapper {
+    background-attachment: scroll;
+    background-color: black;
+    background-image: url(src/assets/images/common/bg2.jpg);
+    background-position: center;
+    background-repeat: repeat-y;
 }

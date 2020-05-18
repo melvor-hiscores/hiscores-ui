@@ -1,29 +1,39 @@
-<table mat-table [dataSource]="dataSource">
+<div fxLayout="column" fxFlexFill>
+  <h1 fxLayoutAlign="center start">
+    Skill : {{activeSkillName}}<br>
+  </h1>
 
-  <!-- Rank Column -->
-  <ng-container matColumnDef="rank">
-    <th mat-header-cell *matHeaderCellDef> Rank </th>
-    <td mat-cell *matCellDef="let element"> {{element.rank}} </td>
-  </ng-container>
+  <table mat-table [dataSource]="dataSource">
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+    <!-- Rank Column -->
+    <ng-container matColumnDef="rank">
+      <th mat-header-cell *matHeaderCellDef> Rank </th>
+      <td mat-cell *matCellDef="let rankRow"> {{rankRow.rank}} </td>
+    </ng-container>
 
-  <!-- Level Column -->
-  <ng-container matColumnDef="level">
-    <th mat-header-cell *matHeaderCellDef> level </th>
-    <td mat-cell *matCellDef="let element"> {{element.level}} </td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let rankRow"> {{rankRow.name}} </td>
+    </ng-container>
 
-  <!-- XP Column -->
-  <ng-container matColumnDef="xp">
-    <th mat-header-cell *matHeaderCellDef> XP </th>
-    <td mat-cell *matCellDef="let element"> {{element.xp}} </td>
-  </ng-container>
+    <!-- Level Column -->
+    <ng-container matColumnDef="level">
+      <th mat-header-cell *matHeaderCellDef> level </th>
+      <td mat-cell *matCellDef="let rankRow"> {{rankRow.level}} </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <!-- XP Column -->
+    <ng-container matColumnDef="xp">
+      <th mat-header-cell *matHeaderCellDef> XP </th>
+      <td mat-cell *matCellDef="let rankRow"> {{rankRow.xp}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <p fxLayoutAlign="center start">
+    <a href="javascript:assets/data/bookmarklet.js" style="color: white; margin-top: 16px;">MelvorIdle Bookmarklet</a>
+  </p>
+</div>

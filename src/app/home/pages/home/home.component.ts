@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SkillsBarComponent } from '../../components/skills-bar/skills-bar.component';
+import { StatsTableComponent } from '../../components/stats-table/stats-table.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  activeSkillName: string;
+
+  constructor(private skillsBar: SkillsBarComponent, private statsTable: StatsTableComponent) { }
 
   ngOnInit() {
+    // default to total
+    this.activeSkillName = 'Total';
+  }
+
+  updateActiveSkillName(skillName: string): void {
+    console.log('actually changed');
+    this.activeSkillName = skillName;
+    this.statsTable.loadRanksForSkillName(this.activeSkillName);
   }
 
 }
