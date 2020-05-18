@@ -1,0 +1,109 @@
+{
+    "skills": [
+        {
+            "id": "0",
+            "name": "Total",
+            "imgPath": "assets/images/skills/total/total.svg"
+        },
+        {
+            "id": "1",
+            "name": "Attack",
+            "imgPath": "assets/images/skills/attack/attack.svg"
+        },
+        {
+            "id": "2",
+            "name": "Strength",
+            "imgPath": "assets/images/skills/strength/strength.svg"
+        },
+        {
+            "id": "3",
+            "name": "Defence",
+            "imgPath": "assets/images/skills/defence/defence.svg"
+        },
+        {
+            "id": "4",
+            "name": "Hitpoints",
+            "imgPath": "assets/images/skills/hitpoints/hitpoints.svg"
+        },
+        {
+            "id": "5",
+            "name": "Ranged",
+            "imgPath": "assets/images/skills/ranged/ranged.svg"
+        },
+        {
+            "id": "6",
+            "name": "Magic",
+            "imgPath": "assets/images/skills/magic/magic.svg"
+        },
+        {
+            "id": "7",
+            "name": "Prayer",
+            "imgPath": "assets/images/skills/prayer/prayer.svg"
+        },
+        {
+            "id": "8",
+            "name": "Slayer",
+            "imgPath": "assets/images/skills/slayer/slayer.svg"
+        },
+        {
+            "id": "9",
+            "name": "Woodcutting",
+            "imgPath": "assets/images/skills/woodcutting/woodcutting.svg"
+        },
+        {
+            "id": "10",
+            "name": "Fishing",
+            "imgPath": "assets/images/skills/fishing/fishing.svg"
+        },
+        {
+            "id": "11",
+            "name": "Firemaking",
+            "imgPath": "assets/images/skills/firemaking/firemaking.svg"
+        },
+        {
+            "id": "12",
+            "name": "Cooking",
+            "imgPath": "assets/images/skills/cooking/cooking.svg"
+        },
+        {
+            "id": "13",
+            "name": "Mining",
+            "imgPath": "assets/images/skills/mining/mining.svg"
+        },
+        {
+            "id": "14",
+            "name": "Smithing",
+            "imgPath": "assets/images/skills/smithing/smithing.svg"
+        },
+        {
+            "id": "15",
+            "name": "Thieving",
+            "imgPath": "assets/images/skills/thieving/thieving.svg"
+        },
+        {
+            "id": "16",
+            "name": "Farming",
+            "imgPath": "assets/images/skills/farming/farming.svg"
+        },
+        {
+            "id": "17",
+            "name": "Fletching",
+            "imgPath": "assets/images/skills/fletching/fletching.svg"
+        },
+        {
+            "id": "18",
+            "name": "Crafting",
+            "imgPath": "assets/images/skills/crafting/crafting.svg"
+        },
+        {
+            "id": "19",
+            "name": "Runecrafting",
+            "imgPath": "assets/images/skills/runecrafting/runecrafting.svg"
+        },
+        {
+            "id": "20",
+            "name": "Herblore",
+            "imgPath": "assets/images/skills/herblore/herblore.svg"
+        }
+    ]
+}

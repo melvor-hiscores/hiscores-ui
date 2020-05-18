@@ -1,0 +1,7 @@
+<ul class="nobulli">
+  <li *ngFor="let skill of skills_array">
+    <button mat-button (click)="updateParent(skill.name)">
+      <mat-icon svgIcon="{{skill.name}}"></mat-icon>&nbsp;{{skill.name}}
+    </button>
+  </li>
+</ul>

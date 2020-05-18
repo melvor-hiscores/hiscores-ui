@@ -1,0 +1,12 @@
+<div fxLayout="row" fxFlexFill>
+    <div fxFlex="20%" >
+        <app-skills-bar [(activeSkillName)]="activeSkillName" fxLayoutAlign="start start"></app-skills-bar>
+    </div>
+
+    <div fxFlex="80%">
+        <app-stats-table [activeSkillName]="activeSkillName" fxLayoutAlign="center center"></app-stats-table>
+    </div>
+</div>
+
+
+
