@@ -5,6 +5,7 @@ import { skills } from 'src/assets/data/skills.json';
 import { Skill } from 'src/app/shared/models/skill';
 
 import { MatTableDataSource } from '@angular/material/table';
+import { WEBSITE_URL } from 'src/environments/environment';
 
 @Component({
   selector: 'app-stats-table',
@@ -20,9 +21,12 @@ export class StatsTableComponent implements OnInit {
 
   rankService: RankService;
 
+  websiteUrl: string;
+
   constructor(rankService: RankService) { this.rankService = rankService; }
 
   ngOnInit() {
+    this.websiteUrl = WEBSITE_URL;
     this.displayedColumns = ['rank', 'name', 'level', 'xp']
     const subscription = this.rankService.getRanksForSkillName(skills[Skill.TOTAL_INDEX]['name']).subscribe(data => {
       if (data.length > 0) {
