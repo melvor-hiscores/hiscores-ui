@@ -37,6 +37,13 @@ export class StatsTableComponent implements OnInit {
     this.loadRanksForSkillName(this.activeSkillName);
   }
 
+  numberWithCommas(x) {
+    if (x !== null) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    return x;
+  }
+
   loadRanksForSkillName(skillName: string) {
 
     console.log('loadRanksForSkillName : ' + skillName);

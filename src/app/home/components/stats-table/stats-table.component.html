@@ -20,7 +20,7 @@
     <!-- GP Column -->
     <ng-container matColumnDef="gp">
       <th mat-header-cell *matHeaderCellDef> GP </th>
-      <td mat-cell *matCellDef="let rankRow"> {{rankRow.gp}} </td>
+      <td mat-cell *matCellDef="let rankRow"> {{numberWithCommas(rankRow.gp)}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="GP_COLUMNS"></tr>
@@ -50,7 +50,7 @@
     <!-- XP Column -->
     <ng-container matColumnDef="xp">
       <th mat-header-cell *matHeaderCellDef> XP </th>
-      <td mat-cell *matCellDef="let rankRow"> {{rankRow.xp}} </td>
+      <td mat-cell *matCellDef="let rankRow"> {{numberWithCommas(rankRow.xp)}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="SKILL_COLUMNS"></tr>
