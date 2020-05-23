@@ -48,6 +48,41 @@
         Herblore: MELVOR_SKILL_INDEX.Herblore
     };
 
+    function extractGp() {
+        dataJson = {};
+        let totalGp = 0;
+
+        // 1 - equipment value
+        let equipmentValue = 0;
+        for (let i = 0; i < equippedItems.length; i++) {
+            /* special logic for ammo */
+            if (i == CONSTANTS.equipmentSlot.Quiver) {
+                equipmentValue += items[equippedItems[i]].sellsFor * ammo;
+            } else {
+                equipmentValue += items[equippedItems[i]].sellsFor * 1;
+            }
+        }
+        totalGp += equipmentValue;
+
+        // 2 - bank value
+        let bankValue = 0;
+        for (let i = 0; i < bank.length; i++) {
+            bankValue += items[bank[i].id].sellsFor * bank[i].qty;
+        }
+        totalGp += bankValue;
+
+        // 3 - current gp value
+        totalGp += gp;
+
+        // 4 - sold gp value
+        totalGp += statsGeneral[0].count;
+
+        /* final - merge into json */
+        dataJson['gp'] = totalGp;
+
+        return dataJson;
+    }
+
     function extractSkills() {
         let dataJson = {};
 
@@ -61,10 +96,8 @@
             /* Reached a key we are interested in */
             if (KEYS.includes(allVars[i])) {
                 /* Add to our JSON */
-
                 if (allVars[i] == 'skillLevel') {
                     skillLevel = getItem(key + allVars[i]);
-                    console.log('skillLevel : ' + skillLevel);
 
                     let j = 0;
                     for (let jKey in JADEDTDT_SKILL_INDEX) {
@@ -81,7 +114,6 @@
                     dataJson[allVars[i]] = reordered_skillLevel;
                 } else if (allVars[i] == 'skillXP') {
                     skillXP = getItem(key + allVars[i]);
-                    console.log('skillXP : ' + skillXP);
 
                     let j = 0;
                     for (let jKey in JADEDTDT_SKILL_INDEX) {
@@ -104,10 +136,26 @@
             }
         }
 
-        console.log(dataJson);
+        return dataJson;
+    }
+
+    function packageJson(gpJson, skillsJson) {
+
+        combinedJson = {};
+
+        for (let eachKey in gpJson) {
+            combinedJson[eachKey] = gpJson[eachKey]
+        }
+
+        for (let eachKey in skillsJson) {
+            combinedJson[eachKey] = skillsJson[eachKey]
+        }
+
+        console.log(combinedJson);
+
         /* gzip and B64 encode */
-        const pakoSave = pako.gzip(JSON.stringify(dataJson), { to: 'string' });
-        return [ dataJson['username'], btoa(pakoSave) ];
+        const pakoSave = pako.gzip(JSON.stringify(combinedJson), { to: 'string' });
+        return [ combinedJson['username'], btoa(pakoSave) ];
     }
 
     function sendToHiscoresAPI(username, b64JsonString) {
@@ -119,15 +167,14 @@
                 "data" : b64JsonString
             }),
             success: function(data) {
-                console.log('Updated hiscores for user: jadedtdt');
+                console.log('Updated hiscores for user: ' + username);
             }
         });
     }
 
     function main() {
-        console.log('entered');
-        let [ username, data ] = extractSkills();
+        let [ username, data ] = packageJson(extractGp(), extractSkills());
         sendToHiscoresAPI(username, data);
     }
     main();
-})();
+}());

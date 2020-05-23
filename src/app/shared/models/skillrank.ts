@@ -1,6 +1,6 @@
-import { Irank } from './Irank';
+import { Iskillrank } from './Iskillrank';
 
-export class Rank implements Irank{
+export class SkillRank implements Iskillrank {
     rank: string;
     name: string;
     level: string;

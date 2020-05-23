@@ -1,7 +1,6 @@
-export interface Irank {
+export interface Igprank {
     rank: string;
     name: string;
-    level: string;
-    xp: string;
+    gp: string;
     updt_dt_tm: string;
 }
