@@ -28,7 +28,7 @@ export class StatsTableComponent implements OnInit {
 
   ngOnInit() {
     this.showGp = false;
-    this.activeSkillName = 'total';
+    this.activeSkillName = 'Total';
     this.loadRanksForSkillName(skills[Skill.TOTAL_INDEX]['name']);
     console.log('Initialized data');
   }
@@ -61,6 +61,7 @@ export class StatsTableComponent implements OnInit {
       console.log('Fetched data for gp: ' + skillName);
       console.log('dataSource: ' + this.gpDataSource.data);
     } else {
+      this.showGp = false;
       console.log('loadRanksForSkillName __ SKILL');
 
       const subscription = this.rankService.getRanksForSkillName(skillName).subscribe(data => {
