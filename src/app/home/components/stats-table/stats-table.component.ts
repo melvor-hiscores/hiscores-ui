@@ -17,9 +17,12 @@ export class StatsTableComponent implements OnInit {
   @Input() activeSkillName: string;
 
   GP_COLUMNS: string[] = [ 'rank', 'name', 'gp' ];
+  COMBAT_COLUMNS: string[] = [ 'rank', 'name', 'level'];
   SKILL_COLUMNS: string[] = [ 'rank', 'name', 'level', 'xp' ];
 
   showGp: boolean = false;
+  showCombat: boolean = false;
+  showSkill: boolean = false;
 
   gpDataSource: MatTableDataSource<GpRank> = new MatTableDataSource();
   skillDataSource: MatTableDataSource<SkillRank> = new MatTableDataSource();
@@ -37,6 +40,22 @@ export class StatsTableComponent implements OnInit {
     this.loadRanksForSkillName(this.activeSkillName);
   }
 
+  changeView(view: string) {
+    if (view.toLowerCase() == 'gp') {
+      this.showGp = true;
+      this.showCombat = false;
+      this.showSkill = false;
+    } else if (view.toLowerCase() == 'combat') {
+      this.showGp = false;
+      this.showCombat = true;
+      this.showSkill = false;
+    } else {
+      this.showGp = false;
+      this.showCombat = false;
+      this.showSkill = true;
+    }
+  }
+
   numberWithCommas(x) {
     if (x !== null) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -48,8 +67,9 @@ export class StatsTableComponent implements OnInit {
 
     console.log('loadRanksForSkillName : ' + skillName);
 
+    this.changeView(skillName);
+
     if (skillName == 'Gp') {
-      this.showGp = true;
       console.log('loadRanksForSkillName __ GP');
 
       const subscription = this.rankService.getRanksForGp(skillName).subscribe(data => {
