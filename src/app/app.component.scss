@@ -1,7 +1,8 @@
 .background-wrapper {
-    background-attachment: scroll;
-    background-color: black;
-    background-image: url(src/assets/images/common/bg2.jpg);
-    background-position: center;
-    background-repeat: repeat-y;
+  background-attachment: scroll;
+  background-color: black;
+  background-image: url(src/assets/images/common/bg2.jpg);
+  background-position: center;
+  background-repeat: repeat-y;
+  overflow: auto;
 }
