@@ -1,3 +1,3 @@
 #!/bin/bash
 # have the hiscores-bookmarklet folder at the same level of hiscores-ui
-cp ../../hiscores-bookmarklet/bookmarklet.js ../src/assets/data/bookmarklet.js
+curl https://raw.githubusercontent.com/melvor-hiscores/hiscores-bookmarklet/master/load-remote-bookmarklet.js > ../src/assets/data/bookmarklet.js

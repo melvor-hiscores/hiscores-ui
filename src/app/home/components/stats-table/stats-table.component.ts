@@ -16,8 +16,8 @@ export class StatsTableComponent implements OnInit {
 
   @Input() activeSkillName: string;
 
-  GP_COLUMNS: string[] = [ 'rank', 'name', 'gp' ];
-  COMBAT_COLUMNS: string[] = [ 'rank', 'name', 'level'];
+  GP_COLUMNS: string[] = [ 'rank', 'name', 'gp', 'num99s', 'pets' ];
+  COMBAT_COLUMNS: string[] = [ 'rank', 'name', 'level' ];
   SKILL_COLUMNS: string[] = [ 'rank', 'name', 'level', 'xp' ];
 
   showGp: boolean = false;
